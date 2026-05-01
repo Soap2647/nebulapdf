@@ -1,16 +1,57 @@
-# React + Vite
+# Nebula PDF Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fast and modern web-based PDF manipulation tool built with React and Vite. Nebula PDF allows users to view, edit, merge, and split PDF documents directly in the browser without relying on external servers, ensuring privacy and speed.
 
-Currently, two official plugins are available:
+## Features
+- **In-Browser Processing:** All PDF manipulations are done client-side for maximum privacy.
+- **Modern Interface:** A sleek and intuitive UI built with React.
+- **Fast Performance:** Lightning-fast operations powered by Vite and optimized JavaScript libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React**
+- **Vite**
+- **JavaScript (ES6+)**
 
-## React Compiler
+## Setup and Execution
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. To build for production:
+   ```bash
+   npm run build
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Nebula PDF Düzenleyici
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React ve Vite kullanılarak geliştirilmiş, hızlı ve modern, web tabanlı bir PDF düzenleme aracıdır. Nebula PDF, kullanıcıların PDF belgelerini dış sunuculara göndermeden doğrudan tarayıcı üzerinden görüntülemesine, düzenlemesine, birleştirmesine ve bölmesine olanak tanıyarak gizlilik ve hızı garanti eder.
+
+## Özellikler
+- **Tarayıcı İçi İşlem (In-Browser Processing):** Maksimum gizlilik için tüm PDF işlemleri istemci (client) tarafında gerçekleştirilir.
+- **Modern Arayüz:** React ile oluşturulmuş şık ve sezgisel bir kullanıcı arayüzü.
+- **Yüksek Performans:** Vite ve optimize edilmiş JavaScript kütüphaneleriyle desteklenen ışık hızında işlemler.
+
+## Kullanılan Teknolojiler
+- **React**
+- **Vite**
+- **JavaScript (ES6+)**
+
+## Kurulum ve Çalıştırma
+1. Gerekli paketleri kurun:
+   ```bash
+   npm install
+   ```
+2. Geliştirme sunucusunu başlatın:
+   ```bash
+   npm run dev
+   ```
+3. Üretim (production) sürümünü derlemek için:
+   ```bash
+   npm run build
+   ```
