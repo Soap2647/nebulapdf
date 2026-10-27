@@ -1,57 +1,77 @@
-# Nebula PDF Editor
+<div align="center">
 
-A fast and modern web-based PDF manipulation tool built with React and Vite. Nebula PDF allows users to view, edit, merge, and split PDF documents directly in the browser without relying on external servers, ensuring privacy and speed.
+# 🌌 Nebula PDF
 
-## Features
-- **In-Browser Processing:** All PDF manipulations are done client-side for maximum privacy.
-- **Modern Interface:** A sleek and intuitive UI built with React.
-- **Fast Performance:** Lightning-fast operations powered by Vite and optimized JavaScript libraries.
+**A private, in-browser PDF editor. Your files never leave your device.**
 
-## Technologies Used
-- **React**
-- **Vite**
-- **JavaScript (ES6+)**
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
+![pdf.js](https://img.shields.io/badge/pdf.js-render-ef4444?style=flat-square)
+![pdf-lib](https://img.shields.io/badge/pdf--lib-edit-f97316?style=flat-square)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-animations-0055FF?style=flat-square&logo=framer&logoColor=white)
 
-## Setup and Execution
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
-3. To build for production:
-   ```bash
-   npm run build
-   ```
+[Features](#-features) · [How it works](#-how-it-works) · [Run it](#-run-it) · [Türkçe](#-türkçe)
+
+</div>
 
 ---
 
-# Nebula PDF Düzenleyici
+Nebula PDF is a fast, glassmorphism-styled PDF toolkit that runs **entirely client-side**.
+Drop a file in, select a region and edit. No uploads, no servers, no accounts.
 
-React ve Vite kullanılarak geliştirilmiş, hızlı ve modern, web tabanlı bir PDF düzenleme aracıdır. Nebula PDF, kullanıcıların PDF belgelerini dış sunuculara göndermeden doğrudan tarayıcı üzerinden görüntülemesine, düzenlemesine, birleştirmesine ve bölmesine olanak tanıyarak gizlilik ve hızı garanti eder.
+## ✨ Features
 
-## Özellikler
-- **Tarayıcı İçi İşlem (In-Browser Processing):** Maksimum gizlilik için tüm PDF işlemleri istemci (client) tarafında gerçekleştirilir.
-- **Modern Arayüz:** React ile oluşturulmuş şık ve sezgisel bir kullanıcı arayüzü.
-- **Yüksek Performans:** Vite ve optimize edilmiş JavaScript kütüphaneleriyle desteklenen ışık hızında işlemler.
+| Tool | What it does |
+|---|---|
+| 👁️ **View** | Smooth page rendering with pdf.js (worker-based) |
+| ✏️ **Edit text** | Select an area and replace or add text |
+| 🧽 **Remove images** | Select and erase images or regions on a page |
+| 🖼️ **Extract as image** | Export pages as **PNG / JPG** at a chosen quality |
+| 📄 **Convert to Word** | Generate a `.docx` from the document's text |
+| 📦 **Batch export** | Bundle multi-page exports into a ZIP |
 
-## Kullanılan Teknolojiler
-- **React**
-- **Vite**
-- **JavaScript (ES6+)**
+Everything is processed in memory in your browser, so it's safe for confidential documents.
 
-## Kurulum ve Çalıştırma
-1. Gerekli paketleri kurun:
-   ```bash
-   npm install
-   ```
-2. Geliştirme sunucusunu başlatın:
-   ```bash
-   npm run dev
-   ```
-3. Üretim (production) sürümünü derlemek için:
-   ```bash
-   npm run build
-   ```
+## 🧩 How it works
+
+```mermaid
+flowchart LR
+    F[Drop PDF] --> R[pdfjs-dist<br/>render to canvas]
+    R --> S[Selection overlay]
+    S --> E[pdf-lib<br/>text / image edits]
+    E --> X{Export}
+    X --> P[PDF]
+    X --> I[PNG · JPG]
+    X --> W[DOCX · docx]
+    X --> Z[ZIP · jszip]
+```
+
+## 🚀 Run it
+
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # production build in dist/
+```
+
+## 📁 Project structure
+
+```
+src/
+├── components/   FileDropzone, PDFViewer, SelectionOverlay, TextEditTool,
+│                 ImageRemovalTool, ExportTool, Sidebar, GlassCard, NeonButton
+├── utils/        pdfHelper (load/render), pdfExporter (PDF/PNG/JPG), pdfToDocx
+└── App.jsx
+public/pdf.worker.min.mjs
+```
+
+## 🇹🇷 Türkçe
+
+**Nebula PDF**, tamamen tarayıcıda çalışan, gizlilik odaklı bir PDF düzenleyicidir. Dosyalar hiçbir sunucuya
+gönderilmez. PDF görüntüleme, metin düzenleme, görsel silme, sayfaları PNG/JPG olarak çıkarma ve Word'e (.docx)
+dönüştürme özellikleri sunar. React, Vite, Tailwind, pdf.js ve pdf-lib ile geliştirilmiştir.
+
+---
+
+<div align="center"><sub>Built by <a href="https://github.com/Soap2647">Mert Yasin Yılmaz</a></sub></div>
